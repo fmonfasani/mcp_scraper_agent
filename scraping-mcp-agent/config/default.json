@@ -1,0 +1,136 @@
+{
+  "server": {
+    "name": "scraping-mcp-agent",
+    "version": "1.0.0",
+    "description": "Advanced web scraping MCP agent",
+    "maxConcurrentRequests": 10,
+    "timeout": 300000,
+    "enableLogging": true,
+    "enableMetrics": true,
+    "enableRateLimit": true
+  },
+  "rateLimit": {
+    "maxRequestsPerMinute": 30,
+    "maxRequestsPerHour": 500,
+    "burstLimit": 10,
+    "timeWindow": 60000
+  },
+  "scraping": {
+    "defaultTimeout": 30000,
+    "maxRetries": 3,
+    "retryDelay": 1000,
+    "enableStealth": true,
+    "enableCleaning": true,
+    "maxConcurrentTabs": 3,
+    "humanLikeDelay": true,
+    "takeScreenshots": false
+  },
+  "antiDetection": {
+    "enableUserAgentRotation": true,
+    "enableViewportRandomization": true,
+    "enableTimingRandomization": true,
+    "enableNavigationPatterns": true,
+    "enableJavaScriptContext": true,
+    "enableWebGLFingerprinting": true,
+    "enableCanvasFingerprinting": true,
+    "enableAudioFingerprinting": true
+  },
+  "browser": {
+    "defaultBrowser": "chromium",
+    "headless": true,
+    "enableProxy": false,
+    "enableCookies": true,
+    "enableCache": false,
+    "args": [
+      "--no-first-run",
+      "--disable-blink-features=AutomationControlled",
+      "--disable-features=VizDisplayCompositor",
+      "--disable-ipc-flooding-protection",
+      "--disable-renderer-backgrounding",
+      "--disable-backgrounding-occluded-windows",
+      "--disable-features=TranslateUI",
+      "--disable-extensions",
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
+    ]
+  },
+  "agents": {
+    "ecommerce": {
+      "maxReviews": 50,
+      "maxVariants": 20,
+      "maxRelatedProducts": 10,
+      "extractShippingInfo": false,
+      "extractSpecifications": false,
+      "priceValidation": true
+    },
+    "jobs": {
+      "maxJobsPerPage": 50,
+      "maxPages": 5,
+      "extractSalaryDetails": true,
+      "extractCompanyInfo": false,
+      "validateJobData": true
+    },
+    "news": {
+      "maxArticlesPerPage": 20,
+      "maxPages": 3,
+      "extractFullContent": true,
+      "extractSocialMetrics": false,
+      "contentMinLength": 100
+    },
+    "leads": {
+      "maxLeadsPerPage": 50,
+      "maxPages": 3,
+      "validateEmails": false,
+      "validatePhones": false,
+      "enableSocialLookup": true,
+      "rateLimit": {
+        "maxConcurrent": 1,
+        "delayBetweenRequests": 5000
+      }
+    }
+  },
+  "monitoring": {
+    "enableHealthChecks": true,
+    "healthCheckInterval": 60000,
+    "enableMetricsCollection": true,
+    "metricsInterval": 300000,
+    "alertThresholds": {
+      "errorRate": 20,
+      "responseTime": 30000,
+      "memoryUsage": 80
+    }
+  },
+  "storage": {
+    "enableJobPersistence": false,
+    "enableResultsCaching": false,
+    "cacheExpiration": 3600000,
+    "maxCacheSize": "100MB"
+  },
+  "logging": {
+    "level": "info",
+    "enableConsole": true,
+    "enableFile": true,
+    "maxFileSize": "50MB",
+    "maxFiles": 5,
+    "enableMetricsLogging": true
+  },
+  "export": {
+    "defaultFormat": "json",
+    "enableCompression": false,
+    "includeMetadata": true,
+    "maxExportSize": "10MB"
+  },
+  "security": {
+    "enableRequestValidation": true,
+    "enableInputSanitization": true,
+    "maxUrlsPerBatch": 50,
+    "maxDataSize": "5MB",
+    "allowedDomains": [],
+    "blockedDomains": [
+      "localhost",
+      "127.0.0.1",
+      "internal.company.com"
+    ]
+  }
+}

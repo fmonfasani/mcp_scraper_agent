@@ -1,0 +1,179 @@
+{
+  "server": {
+    "maxConcurrentRequests": 20,
+    "timeout": 600000,
+    "enableLogging": true,
+    "enableMetrics": true,
+    "enableRateLimit": true
+  },
+  "rateLimit": {
+    "maxRequestsPerMinute": 60,
+    "maxRequestsPerHour": 1000,
+    "burstLimit": 20,
+    "timeWindow": 60000
+  },
+  "scraping": {
+    "defaultTimeout": 45000,
+    "maxRetries": 5,
+    "retryDelay": 2000,
+    "enableStealth": true,
+    "enableCleaning": true,
+    "maxConcurrentTabs": 5,
+    "humanLikeDelay": true,
+    "takeScreenshots": false
+  },
+  "antiDetection": {
+    "enableUserAgentRotation": true,
+    "enableViewportRandomization": true,
+    "enableTimingRandomization": true,
+    "enableNavigationPatterns": true,
+    "enableJavaScriptContext": true,
+    "enableWebGLFingerprinting": true,
+    "enableCanvasFingerprinting": true,
+    "enableAudioFingerprinting": true,
+    "proxyRotation": false,
+    "customHeaders": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Accept-Encoding": "gzip, deflate, br",
+      "DNT": "1",
+      "Connection": "keep-alive",
+      "Upgrade-Insecure-Requests": "1"
+    }
+  },
+  "browser": {
+    "defaultBrowser": "chromium",
+    "headless": true,
+    "enableProxy": false,
+    "enableCookies": false,
+    "enableCache": false,
+    "args": [
+      "--no-first-run",
+      "--disable-blink-features=AutomationControlled",
+      "--disable-features=VizDisplayCompositor",
+      "--disable-ipc-flooding-protection",
+      "--disable-renderer-backgrounding",
+      "--disable-backgrounding-occluded-windows",
+      "--disable-features=TranslateUI",
+      "--disable-extensions",
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-gpu-sandbox",
+      "--disable-software-rasterizer",
+      "--disable-background-timer-throttling",
+      "--disable-background-networking",
+      "--disable-client-side-phishing-detection",
+      "--disable-default-apps",
+      "--disable-sync",
+      "--disable-web-security",
+      "--disable-features=site-per-process"
+    ]
+  },
+  "agents": {
+    "ecommerce": {
+      "maxReviews": 100,
+      "maxVariants": 50,
+      "maxRelatedProducts": 20,
+      "extractShippingInfo": true,
+      "extractSpecifications": true,
+      "priceValidation": true,
+      "enablePriceTracking": true
+    },
+    "jobs": {
+      "maxJobsPerPage": 100,
+      "maxPages": 10,
+      "extractSalaryDetails": true,
+      "extractCompanyInfo": true,
+      "validateJobData": true,
+      "enableApplicationTracking": true
+    },
+    "news": {
+      "maxArticlesPerPage": 50,
+      "maxPages": 5,
+      "extractFullContent": true,
+      "extractSocialMetrics": true,
+      "contentMinLength": 200,
+      "enableSentimentAnalysis": false
+    },
+    "leads": {
+      "maxLeadsPerPage": 100,
+      "maxPages": 5,
+      "validateEmails": true,
+      "validatePhones": true,
+      "enableSocialLookup": true,
+      "enableCompanyEnrichment": true,
+      "rateLimit": {
+        "maxConcurrent": 2,
+        "delayBetweenRequests": 3000
+      }
+    }
+  },
+  "monitoring": {
+    "enableHealthChecks": true,
+    "healthCheckInterval": 30000,
+    "enableMetricsCollection": true,
+    "metricsInterval": 60000,
+    "alertThresholds": {
+      "errorRate": 15,
+      "responseTime": 45000,
+      "memoryUsage": 85
+    },
+    "enableAlerting": true,
+    "webhookUrl": null,
+    "emailAlerts": null
+  },
+  "storage": {
+    "enableJobPersistence": true,
+    "enableResultsCaching": true,
+    "cacheExpiration": 7200000,
+    "maxCacheSize": "500MB",
+    "enableDataCompression": true
+  },
+  "logging": {
+    "level": "warn",
+    "enableConsole": false,
+    "enableFile": true,
+    "maxFileSize": "100MB",
+    "maxFiles": 10,
+    "enableMetricsLogging": true,
+    "enableErrorTracking": true
+  },
+  "export": {
+    "defaultFormat": "json",
+    "enableCompression": true,
+    "includeMetadata": true,
+    "maxExportSize": "50MB",
+    "enableAsyncExport": true
+  },
+  "security": {
+    "enableRequestValidation": true,
+    "enableInputSanitization": true,
+    "maxUrlsPerBatch": 100,
+    "maxDataSize": "20MB",
+    "allowedDomains": [],
+    "blockedDomains": [
+      "localhost",
+      "127.0.0.1",
+      "0.0.0.0",
+      "internal.company.com",
+      "private.local",
+      "admin.local"
+    ],
+    "enableDomainWhitelist": false,
+    "maxRequestsPerIp": 1000,
+    "blockSuspiciousPatterns": true
+  },
+  "performance": {
+    "enableResourceOptimization": true,
+    "maxMemoryUsage": "2GB",
+    "enableGarbageCollection": true,
+    "gcInterval": 300000,
+    "enableProcessRestart": true,
+    "restartThreshold": {
+      "memoryUsage": 90,
+      "errorRate": 25,
+      "uptime": 86400000
+    }
+  }
+}

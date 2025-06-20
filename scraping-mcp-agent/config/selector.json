@@ -1,0 +1,172 @@
+# Scraping MCP Agent Environment Configuration
+
+# Node Environment
+NODE_ENV=development
+
+# MCP Server Configuration
+MCP_SERVER_NAME=scraping-mcp-agent
+MCP_SERVER_DESCRIPTION=Advanced web scraping MCP agent with specialized tools
+
+# Rate Limiting
+MAX_REQUESTS_PER_MINUTE=30
+MAX_REQUESTS_PER_HOUR=500
+MAX_CONCURRENT_REQUESTS=10
+
+# Timeouts (in milliseconds)
+TOOL_TIMEOUT=300000
+SCRAPING_TIMEOUT=30000
+
+# Logging Configuration
+LOG_LEVEL=info
+ENABLE_LOGGING=true
+ENABLE_METRICS=true
+ENABLE_RATE_LIMIT=true
+
+# Browser Configuration
+DEFAULT_BROWSER=chromium
+BROWSER_HEADLESS=true
+ENABLE_SCREENSHOTS=false
+SCREENSHOTS_PATH=./screenshots
+
+# Anti-Detection Settings
+ENABLE_STEALTH=true
+ENABLE_USER_AGENT_ROTATION=true
+ENABLE_PROXY_ROTATION=false
+HUMAN_LIKE_DELAY=true
+
+# Proxy Configuration (if using proxies)
+PROXY_TYPE=http
+PROXY_HOST=
+PROXY_PORT=
+PROXY_USERNAME=
+PROXY_PASSWORD=
+
+# Data Processing
+ENABLE_DATA_CLEANING=true
+MAX_DATA_SIZE=5MB
+ENABLE_DATA_VALIDATION=true
+
+# Storage Configuration
+ENABLE_JOB_PERSISTENCE=false
+ENABLE_RESULTS_CACHING=false
+CACHE_EXPIRATION=3600000
+MAX_CACHE_SIZE=100MB
+
+# Security Settings
+ENABLE_REQUEST_VALIDATION=true
+ENABLE_INPUT_SANITIZATION=true
+MAX_URLS_PER_BATCH=50
+
+# Performance Settings
+MAX_MEMORY_USAGE=2GB
+ENABLE_GARBAGE_COLLECTION=true
+GC_INTERVAL=300000
+
+# Agent-Specific Settings
+
+# E-commerce Agent
+ECOMMERCE_MAX_REVIEWS=50
+ECOMMERCE_MAX_VARIANTS=20
+ECOMMERCE_MAX_RELATED_PRODUCTS=10
+ECOMMERCE_EXTRACT_SHIPPING=false
+
+# Jobs Agent
+JOBS_MAX_PER_PAGE=50
+JOBS_MAX_PAGES=5
+JOBS_EXTRACT_SALARY=true
+JOBS_EXTRACT_COMPANY_INFO=false
+
+# News Agent
+NEWS_MAX_ARTICLES_PER_PAGE=20
+NEWS_MAX_PAGES=3
+NEWS_EXTRACT_FULL_CONTENT=true
+NEWS_CONTENT_MIN_LENGTH=100
+
+# Leads Agent
+LEADS_MAX_PER_PAGE=50
+LEADS_MAX_PAGES=3
+LEADS_VALIDATE_EMAILS=false
+LEADS_VALIDATE_PHONES=false
+LEADS_DELAY_BETWEEN_REQUESTS=5000
+
+# Monitoring and Alerting
+ENABLE_HEALTH_CHECKS=true
+HEALTH_CHECK_INTERVAL=60000
+ENABLE_METRICS_COLLECTION=true
+METRICS_INTERVAL=300000
+
+# Alert Thresholds
+ERROR_RATE_THRESHOLD=20
+RESPONSE_TIME_THRESHOLD=30000
+MEMORY_USAGE_THRESHOLD=80
+
+# Webhook URLs for notifications
+WEBHOOK_URL=
+EMAIL_ALERTS=
+
+# External Services (optional)
+# Email validation service
+EMAIL_VALIDATION_API_KEY=
+# Phone validation service
+PHONE_VALIDATION_API_KEY=
+# Proxy service
+PROXY_SERVICE_API_KEY=
+
+# Database Configuration (if using persistence)
+DATABASE_URL=
+REDIS_URL=
+
+# Cloud Storage (if using cloud export)
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=
+S3_BUCKET_NAME=
+
+# Monitoring Services
+SENTRY_DSN=
+DATADOG_API_KEY=
+NEW_RELIC_LICENSE_KEY=
+
+# Development Settings
+ENABLE_DEBUG_MODE=false
+ENABLE_VERBOSE_LOGGING=false
+ENABLE_PERFORMANCE_PROFILING=false
+ENABLE_MEMORY_PROFILING=false
+
+# Testing Configuration
+TEST_URLS=https://example.com,https://httpbin.org/html
+TEST_TIMEOUT=10000
+ENABLE_TEST_MODE=false
+
+# Custom User Agents (comma-separated)
+CUSTOM_USER_AGENTS=
+
+# Blocked Domains (comma-separated)
+BLOCKED_DOMAINS=localhost,127.0.0.1,internal.company.com
+
+# Allowed Domains (comma-separated, empty means all allowed)
+ALLOWED_DOMAINS=
+
+# Export Settings
+DEFAULT_EXPORT_FORMAT=json
+ENABLE_EXPORT_COMPRESSION=false
+MAX_EXPORT_SIZE=10MB
+
+# Backup Settings
+ENABLE_AUTO_BACKUP=false
+BACKUP_INTERVAL=86400000
+BACKUP_RETENTION_DAYS=7
+
+# SSL/TLS Settings
+IGNORE_SSL_ERRORS=false
+SSL_CERT_PATH=
+SSL_KEY_PATH=
+
+# CORS Settings (if running as web service)
+CORS_ORIGIN=*
+CORS_METHODS=GET,POST,PUT,DELETE
+CORS_HEADERS=Content-Type,Authorization
+
+# API Keys for premium features
+PREMIUM_API_KEY=
+ENTERPRISE_LICENSE_KEY=
