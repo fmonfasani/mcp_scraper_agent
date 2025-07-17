@@ -309,8 +309,8 @@ async function scrapeBullMarketBrokers() {
     
     // Configuración de login
     const loginConfig: LoginConfig = {
-      email: 'fmonfasani@gmail.com',
-      password: '$Karaoke27570',
+      email: process.env.LOGIN_EMAIL || '',
+      password: process.env.LOGIN_PASSWORD || '',
       loginUrl: 'https://bullmarketbrokers.com/Security/SignIn'
     };
     
