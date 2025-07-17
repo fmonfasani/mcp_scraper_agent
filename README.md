@@ -458,6 +458,7 @@ See the `/examples` directory for more comprehensive examples:
 - `ecommerce-example.ts` - Advanced e-commerce scraping
 - `competitive-intel.ts` - Competitor analysis
 - `batch-scraping.ts` - Large-scale data collection
+- `site-analysis.ts` - Analyze a single site and summarize strengths
 
 ## 🛠️ Development
 
