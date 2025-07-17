@@ -5,8 +5,8 @@
  * 
  * Advanced competitor analysis and monitoring
  * Features: Multi-site comparison, pricing analysis, trend detection
- * Run with: npm run example:competitive-intel
- */
+ * Run with: npm run example:competitive
+*/
 
 import { 
   scraperFactory,
