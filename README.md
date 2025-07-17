@@ -444,7 +444,7 @@ npm run example:quick
 npm run example:ecommerce
 
 # Competitive intelligence demo
-npm run example:competitive-intel
+npm run example:competitive
 
 # Batch processing demo
 npm run example:batch-scraping
