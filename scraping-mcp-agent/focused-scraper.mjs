@@ -55,8 +55,8 @@ async function scrapeFocusedData() {
     console.log('🔐 Realizando login...');
     await page.goto('https://bullmarketbrokers.com/Security/SignIn');
     
-    await page.fill('input[type="email"]', 'fmonfasani@gmail.com');
-    await page.fill('input[type="password"]', '$Karaoke27570');
+    await page.fill('input[type="email"]', process.env.LOGIN_EMAIL || '');
+    await page.fill('input[type="password"]', process.env.LOGIN_PASSWORD || '');
     await page.click('#submitButton');
     
     await page.waitForURL('**/Dashboard', { timeout: 15000 });
