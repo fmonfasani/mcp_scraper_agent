@@ -165,11 +165,11 @@ async function debugLogin() {
       
       // Llenar campos
       logger.info('Llenando campo email...');
-      await emailField.fill('fmonfasani@gmail.com');
+      await emailField.fill(process.env.LOGIN_EMAIL || '');
       await page.waitForTimeout(1000);
       
       logger.info('Llenando campo password...');
-      await passwordField.fill('$Karaoke27570');
+      await passwordField.fill(process.env.LOGIN_PASSWORD || '');
       await page.waitForTimeout(1000);
       
       // Buscar botón submit
