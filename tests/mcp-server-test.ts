@@ -36,7 +36,7 @@ describe('ScrapingMCPServer', () => {
 
     expect(response.success).toBe(true);
     expect(response.metadata.toolName).toBe('system_status');
-    expect(response.data).toHaveProperty('uptime');
-    expect(response.data).toHaveProperty('timestamp');
+    expect(typeof response.data.uptime).toBe('number');
+    expect(typeof response.data.timestamp).toBe('string');
   });
 });
