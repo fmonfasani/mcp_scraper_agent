@@ -8,6 +8,8 @@
 
 import { chromium, Browser, Page } from 'playwright';
 
+const { LOGIN_EMAIL = '', LOGIN_PASSWORD = '' } = process.env;
+
 interface LoginConfig {
   email: string;
   password: string;
@@ -309,8 +311,8 @@ async function scrapeBullMarketBrokers() {
     
     // Configuración de login
     const loginConfig: LoginConfig = {
-      email: process.env.LOGIN_EMAIL || '',
-      password: process.env.LOGIN_PASSWORD || '',
+      email: LOGIN_EMAIL,
+      password: LOGIN_PASSWORD,
       loginUrl: 'https://bullmarketbrokers.com/Security/SignIn'
     };
     
