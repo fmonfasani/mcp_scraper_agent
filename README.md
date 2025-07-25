@@ -448,6 +448,9 @@ npm run example:competitive
 
 # Batch processing demo
 npm run example:batch-scraping
+
+# Single site analysis demo
+npm run example:site-analysis
 ```
 
 ### Custom Examples
