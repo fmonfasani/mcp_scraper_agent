@@ -6,6 +6,8 @@
 
 import { chromium } from 'playwright';
 
+const { LOGIN_EMAIL = '', LOGIN_PASSWORD = '' } = process.env;
+
 // Simple logger inline para no depender de otros archivos
 class Logger {
   private log(level: string, message: string, meta?: any): void {
@@ -165,11 +167,11 @@ async function debugLogin() {
       
       // Llenar campos
       logger.info('Llenando campo email...');
-      await emailField.fill(process.env.LOGIN_EMAIL || '');
+      await emailField.fill(LOGIN_EMAIL);
       await page.waitForTimeout(1000);
       
       logger.info('Llenando campo password...');
-      await passwordField.fill(process.env.LOGIN_PASSWORD || '');
+      await passwordField.fill(LOGIN_PASSWORD);
       await page.waitForTimeout(1000);
       
       // Buscar botón submit
